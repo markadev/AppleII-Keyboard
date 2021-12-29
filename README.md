@@ -19,3 +19,13 @@ Parts list:
 _Warning_: The DIP-16 connector on the logic board does have some pins with
 higher voltages that will destroy your Arduino if you accidentally connect to
 them, so take care.
+
+### Prototype
+
+The Arduino hole pattern is too wide for the DIP-16 socket so I used another
+PCB to hold the machine pins and then jumpered the Arduino to the pins on top.
+I also used a pin header to connect to a spare PS/2 connector from an old PC.
+
+It's not so pretty, but it's compact and cost almost nothing.
+
+![Prototype Image](docs/prototype.jpg)
