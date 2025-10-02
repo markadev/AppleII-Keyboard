@@ -6,30 +6,30 @@
 // Class to translate PS2 scan codes into Apple II keyboard codes.
 class AppleIIKeyboardTranslation {
 public:
-  AppleIIKeyboardTranslation(PS2Keyboard& kbd) : m_kbd(kbd) {}
+    AppleIIKeyboardTranslation(PS2Keyboard& kbd) : m_kbd(kbd) {}
 
-  // Fetches the next encoded key code, or 0 if there isn't one.
-  uint8_t getKeyCode();
+    // Fetches the next encoded key code, or 0 if there isn't one.
+    uint8_t getKeyCode();
 
 private:
-  PS2Keyboard& m_kbd;
-  static const uint8_t translation[512][4] PROGMEM;
+    PS2Keyboard& m_kbd;
+    static const uint8_t translation[512][4] PROGMEM;
 };
 
 uint8_t AppleIIKeyboardTranslation::getKeyCode() {
-  uint16_t ps2ScanCode = m_kbd.getKeypress() & 0x1ff;
-  if(ps2ScanCode == 0) {
-    return 0;
-  }
+    uint16_t ps2ScanCode = m_kbd.getKeypress() & 0x1ff;
+    if(ps2ScanCode == 0) {
+        return 0;
+    }
 
-  uint8_t modifiers = 0;
-  if(m_kbd.isShiftPressed()) {
-    modifiers |= 0x1;
-  }
-  if(m_kbd.isCtrlPressed()) {
-    modifiers |= 0x2;
-  }
-  return pgm_read_byte(&(translation[ps2ScanCode][modifiers]));
+    uint8_t modifiers = 0;
+    if(m_kbd.isShiftPressed()) {
+        modifiers |= 0x1;
+    }
+    if(m_kbd.isCtrlPressed()) {
+        modifiers |= 0x2;
+    }
+    return pgm_read_byte(&(translation[ps2ScanCode][modifiers]));
 }
 
 // This table is generated from a script
