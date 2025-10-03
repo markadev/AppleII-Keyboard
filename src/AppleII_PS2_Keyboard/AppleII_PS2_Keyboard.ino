@@ -21,8 +21,8 @@ void setup() {
 
   appleOutputLatch.setup();
 
-  digitalWrite(AII_RESET_PIN, 1); // reset is active-low
-  pinMode(AII_RESET_PIN, OUTPUT);
+  // leave AII_RESET_PIN configured as an INPUT so it floats
+  digitalWrite(AII_RESET_PIN, 0); // drive low when the pin is set to output
 
   kbd.setup();
   attachInterrupt(digitalPinToInterrupt(PS2_CLOCK_PIN), ps2ClockIntHandler, FALLING);
@@ -38,9 +38,9 @@ void loop() {
 
     if(d == 0xff) {
       // Special reset key sequence was pressed
-      digitalWrite(AII_RESET_PIN, 0);
+      pinMode(AII_RESET_PIN, OUTPUT);  // drive low
       delay(50);
-      digitalWrite(AII_RESET_PIN, 1);
+      pinMode(AII_RESET_PIN, INPUT);  // back to floating
     } else {
       appleOutputLatch.write(d);
     }
