@@ -27,10 +27,10 @@ public:
         digitalWrite(AII_DATA_PIN_6, (value >> 6) & 0x01);
 
         // Ref p.90 of "The Apple II Circuit Description" for timing info
-        delayMicroseconds(11);
+        delayMicroseconds(12);
         digitalWrite(AII_STROBE_PIN, 1);
-        delayMicroseconds(11);
+        delayMicroseconds(12);
         digitalWrite(AII_STROBE_PIN, 0);
-        delayMicroseconds(11);
+        delayMicroseconds(12);
     }
 };
