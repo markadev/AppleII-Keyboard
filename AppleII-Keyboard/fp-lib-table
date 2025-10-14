@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Connector_Project")(type "KiCad")(uri "${KIPRJMOD}/Libraries/footprints/Connector_Project.pretty")(options "")(descr ""))
+)

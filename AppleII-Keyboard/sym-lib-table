@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Diode_Project")(type "KiCad")(uri "${KIPRJMOD}/Libraries/symbols/Diode_Project.kicad_sym")(options "")(descr ""))
+)
