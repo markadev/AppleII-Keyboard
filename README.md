@@ -23,6 +23,12 @@ ESD protection diodes to protect your Apple II from static discharges through th
 It will require an ATtiny ISP (In-system Programmer) like the XGecu T48 or similar, or an Arduino
 running the ArduinoISP sketch could also work.
 
+It's composed of two parts: an adapter board with a microcontroller for performing the
+translation logic and a connector board with the PS/2 keyboard connector that can be mounted
+separately. If you want to use a different type of PS/2 connector then you are free to wire
+up anything you need to the 8 pin header on the adapter board! For example, I can use an old
+PC screw-mounted PS/2 connector.
+
 
 ### Building
 
@@ -45,9 +51,7 @@ ESD protection diodes. The ESD diodes are OPTIONAL so can be omitted if you can'
 difficulty soldering the small surface-mount part.
 
 You'll need one of each PCB; one PCB for the adapter that plugs into the keyboard connector on the
-Apple II logic board and one PCB for the PS/2 connector board. If you want to use something like a
-panel-mount PS/2 connector then of course you can build a custom cable and wouldn't need the PS/2
-connector board and associated parts.
+Apple II logic board and one PCB for the PS/2 mini-DIN connector board.
 
 
 | Qty | Value                     | Mfr                 | MfrPartNo          | MouserPartNo         |
@@ -93,6 +97,10 @@ Soldering together the adapter board is a little more involved:
     Half of the socket's pins will be between the two pin headers from step 2 so getting the soldering iron
     to them is a little tight.
  4. Install the decoupling capacitor on the top side of the board and solder in place.
+
+To assemble the 8 pin ribbon cable just make sure that the same wire is entering the marked pin 1 position
+on both connector housings. The ribbon cable can enter either side of the housing as long as that wire lines
+up with the pin 1 position.
 
 
 #### Flashing the ATtiny
