@@ -120,12 +120,14 @@ work (though setting fuse values looks much more complicated).
 
 ## Arduino Pro Micro version
 
-Parts list:
+#### Parts list
  1. Arduino. I used a cheap Arduino Pro Micro clone from Amazon but
     you could probably adapt to use whatever you have on hand.
  2. Female PS/2 connector
  3. 2 8-pin male machine pin headers, or some other connector for the
     DIP-16 socket on the Apple II logic board.
+
+#### Assembling
 
 ![Hookup Diagram](docs/promicro_wiring_diagram.svg)
 
